@@ -67,14 +67,15 @@ int main (int argv, char** argc){
   //getSuccessor for next card, cardPrinter to print from val
   cout << "\nAlice's cards: " << endl;
   int aliceCard = handA.getMin();
-  while (aliceCard != 0) {
-    cout << cardPrinter(aliceCard) << endl;
+  
+  while (aliceCard != 0 && aliceCard < 100000) {
+    cout << cardPrinter(aliceCard) << " " << aliceCard << endl;
     aliceCard = handA.getSuccessor(aliceCard);
   }
 
   cout << "\nBob's cards: " << endl;
   int bobCard = handB.getMin();
-  while (bobCard != 0) {
+  while (bobCard != 0 && bobCard < 100000) {
     cout << cardPrinter(bobCard) << endl;
     bobCard = handB.getSuccessor(bobCard);
   }
