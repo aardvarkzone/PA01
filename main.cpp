@@ -68,14 +68,14 @@ int main (int argv, char** argc){
   cout << "\nAlice's cards: " << endl;
   int aliceCard = handA.getMin();
   
-  while (aliceCard != 0 /*&& aliceCard < 100000*/) {
+  while (aliceCard != 0) {
     cout << cardPrinter(aliceCard) << endl;
     aliceCard = handA.getSuccessor(aliceCard);
   }
 
   cout << "\nBob's cards: " << endl;
   int bobCard = handB.getMin();
-  while (bobCard != 0 /*&& bobCard < 100000*/) {
+  while (bobCard != 0) {
     cout << cardPrinter(bobCard) << endl;
     bobCard = handB.getSuccessor(bobCard);
   }

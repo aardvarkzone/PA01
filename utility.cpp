@@ -7,7 +7,7 @@ int numAssign (string line) {
   int value = 0;
   //convert suites to num values (ascii values)
   //c->99, d->100, s->115, h->104+12->200 (lowercase)
-  if (line[0]=='h') {
+  if (line[0] == 'h') {
     value += 200; //hearts 
   } else {
     value += line[0]; //all other suites are in order, can just use ascii
