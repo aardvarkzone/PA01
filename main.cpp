@@ -69,7 +69,7 @@ int main (int argv, char** argc){
   int aliceCard = handA.getMin();
   
   while (aliceCard != 0 && aliceCard < 100000) {
-    cout << cardPrinter(aliceCard) << " " << aliceCard << endl;
+    cout << cardPrinter(aliceCard) << endl;
     aliceCard = handA.getSuccessor(aliceCard);
   }
 
