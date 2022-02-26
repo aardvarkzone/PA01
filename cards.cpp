@@ -189,35 +189,21 @@ int card::getPredecessor(int value) const{
 
 // returns the Node containing the successor of the given value
 card::Node* card::getSuccessorNode(int value) const{
-    if(!contains(value)){
-        return nullptr;
+    Node* p = root;
+    Node* n = getNodeFor(value, root);
+    
+    while (p->right) {
+        p = p->right;
+    } if (n == p) {
+        n = new Node;
+        n->info = 0;
+        return n;
+    } 
+    value++;
+    while (getNodeFor(value, root)==nullptr) {
+        value++;
     }
-    else{
-        Node* p = getNodeFor(value, root);
-        if(p->right){
-            p = p->right;
-            while (p)
-            {
-                if(p->left){
-                    p = p->left;
-                } else{
-                    break;
-                }
-            }
-        }
-        else{
-            while (p->parent) {
-                if(p->parent->info <= value){
-                    p = p->parent;
-                } else{
-                    break;
-                }
-            }
-        
-            return p->parent;
-        }
-        return p;
-    }
+    return getNodeFor(value, root);
 }
 
     // returns the successor value of the given value or 0 if there is none
